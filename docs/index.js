@@ -9,6 +9,7 @@ var jinx = new Audio('sounds/7.mp3')
 
 document.addEventListener("keypress", function(e) {
     makesound(e.key)
+    animationyep(e.key)
 })
 
 var numdrum = document.querySelectorAll(".drum").length
@@ -18,6 +19,7 @@ for (var i = 0; i < numdrum; i++) {
         var btninner = this.innerHTML
 
         makesound(btninner)
+        animationyep(btninner)
     })
 
 }
@@ -218,6 +220,18 @@ function makesound(key) {
 
         
     }
+}
+
+
+function animationyep(btninner) {
+    var actbtn = document.querySelector("." + btninner)
+
+    actbtn.classList.add("pressed")
+
+    setTimeout(function() {
+        actbtn.classList.remove("pressed")
+    }, 500)
+
 }
 
 
